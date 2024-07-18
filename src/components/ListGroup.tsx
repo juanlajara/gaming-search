@@ -12,7 +12,7 @@ function ListGroup({ items, heading, onSelectItem }: Props) {
 	return (
 		<>
 			<h1>{heading}</h1>
-			{items.length === 0 && <p> Not Items Found</p>}
+			{items.length === 0 && <p> No Items Found</p>}
 			<ul className="list-group">
 				{items.map((item, index) => (
 					<li
