@@ -9,6 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@algolia/autocomplete-core": "^1.17.4",
+    "@algolia/autocomplete-js": "^1.17.4",
+    "@algolia/autocomplete-theme-classic": "^1.17.4",
     "algoliasearch": "^4.24.0",
     "bootstrap": "^5.3.3",
     "react": "^18.2.0",

@@ -11,6 +11,7 @@ import {
 	Pagination,
 	Configure,
 } from "react-instantsearch";
+import { Autocomplete } from "./components/Autocomplete";
 
 function App() {
 	const [alertVisible, setAlertVisibility] = useState(false);
@@ -25,6 +26,11 @@ function App() {
 				indexName="transformed_onboarding_bestbuy_index"
 				insights
 			>
+				<Autocomplete
+					placeholder="Search products"
+					detachedMediaQuery="none"
+					openOnFocus
+				/>
 				<div className="left-panel">
 					<RefinementList attribute="brand" />
 					<RatingMenu attribute="rating" />
