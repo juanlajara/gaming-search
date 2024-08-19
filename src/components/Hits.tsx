@@ -5,9 +5,9 @@ function Hit({ hit }) {
 		<article>
 			<a href={hit.url} style={{ textDecoration: "none", color: "inherit" }}>
 				<img src={hit.image} alt={hit.name} />
-				<h1>
+				<h4>
 					<Highlight attribute="name" hit={hit} />
-				</h1>
+				</h4>
 				<p>{hit.description}</p>
 				<p>${hit.price}</p>
 			</a>
