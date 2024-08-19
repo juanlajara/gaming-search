@@ -1,10 +1,16 @@
+import { Highlight } from "react-instantsearch";
+
 function Hit({ hit }) {
 	return (
 		<article>
-			<img src={hit.image} alt={hit.name} />
-			<p>{hit.categories[0]}</p>
-			<h1>{hit.name}</h1>
-			<p>${hit.price}</p>
+			<a href={hit.url} style={{ textDecoration: "none", color: "inherit" }}>
+				<img src={hit.image} alt={hit.name} />
+				<h1>
+					<Highlight attribute="name" hit={hit} />
+				</h1>
+				<p>{hit.description}</p>
+				<p>${hit.price}</p>
+			</a>
 		</article>
 	);
 }

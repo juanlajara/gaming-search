@@ -1,8 +1,16 @@
 import Form from "./components/Form";
 import Hit from "./components/Hits";
+import RatingMenu from "./components/RatingMenu";
 import { useState } from "react";
 import algoliasearch from "algoliasearch/lite";
-import { InstantSearch, SearchBox, Hits } from "react-instantsearch";
+import {
+	InstantSearch,
+	SearchBox,
+	Hits,
+	RefinementList,
+	Pagination,
+	Configure,
+} from "react-instantsearch";
 
 function App() {
 	const [alertVisible, setAlertVisibility] = useState(false);
@@ -14,10 +22,20 @@ function App() {
 		<div>
 			<InstantSearch
 				searchClient={searchClient}
-				indexName="onboarding_bestbuy_index"
+				indexName="transformed_onboarding_bestbuy_index"
+				insights
 			>
-				<SearchBox />
-				<Hits hitComponent={Hit} />
+				<div className="left-panel">
+					<RefinementList attribute="brand" />
+					<RatingMenu attribute="rating" />
+				</div>
+				<div className="right-panel">
+					<Configure hitsPerPage={40} />
+					<SearchBox autoFocus placeholder="Search for products" />
+
+					<Hits hitComponent={Hit} />
+					<Pagination />
+				</div>
 			</InstantSearch>
 		</div>
 	);
