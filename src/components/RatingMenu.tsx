@@ -59,7 +59,7 @@ export function RatingMenu(props: UseRatingMenuProps) {
 						))}
 
 						<span>{item.value} &amp; Up</span>
-						<span>{item.count} matched results</span>
+						<span> &nbsp;{item.count}</span>
 					</a>
 				</li>
 			))}

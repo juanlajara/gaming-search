@@ -1,7 +1,7 @@
 import Form from "./components/Form";
+// import { useState } from "react";
 import Hit from "./components/Hits";
 import RatingMenu from "./components/RatingMenu";
-import { useState } from "react";
 import algoliasearch from "algoliasearch/lite";
 import {
 	InstantSearch,
@@ -14,7 +14,7 @@ import {
 import { Autocomplete } from "./components/Autocomplete";
 
 function App() {
-	const [alertVisible, setAlertVisibility] = useState(false);
+	// const [alertVisible, setAlertVisibility] = useState(false);
 	const searchClient = algoliasearch(
 		"AJRNF83HF1",
 		"b026d2a27d609c5f767fb59a5257507a"
@@ -38,7 +38,6 @@ function App() {
 				<div className="right-panel">
 					<Configure hitsPerPage={40} />
 					<SearchBox autoFocus placeholder="Search for products" />
-
 					<Hits hitComponent={Hit} />
 					<Pagination />
 				</div>
